@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy: Supagent Social Publisher</title>
+<meta name="description" content="Privacy policy of Supagent Social Publisher, a private tool that publishes its owner's videos to his own YouTube, Instagram and TikTok channels.">
+<style>
+body{max-width:46rem;margin:0 auto;padding:1.5rem 1rem 3rem;font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1b1b1b;background:#fff}
+h1{font-size:1.7rem;line-height:1.25;margin:.5rem 0}h2{font-size:1.25rem;margin-top:2rem}h3{font-size:1.05rem;margin-top:1.4rem}
+a{color:#0b57d0}nav{font-size:.95rem}.meta{color:#555}code{font-size:.9em;background:#f2f2f2;padding:0 .25em;border-radius:3px;overflow-wrap:anywhere}
+li{margin:.25rem 0}.box{border:1px solid #ddd;border-radius:8px;padding:.25rem 1rem;background:#fafafa}
+</style>
+</head>
+<body>
+<nav><a href="./">Supagent Social Publisher</a> &middot; <strong>Privacy Policy</strong> &middot; <a href="terms.html">Terms of Service</a></nav>
+
+<h1>Privacy Policy</h1>
+<p class="meta">Supagent Social Publisher<br>Last updated: 8 November 2026</p>
+
+<h2>1. Who runs the app</h2>
+<p>Supagent Social Publisher ("the app") is a private software tool made and operated by <strong>Mohamed Amine SLIMANE</strong>, an individual developer. It runs only on his own computer (a Mac) and is used only by him, to publish his own finished videos to his own channels and to read those channels' statistics. His channels are Open This Tab (YouTube @openthistab, Instagram @openthistab, TikTok @open.this.tab) and, later, The Deep Ladder.</p>
+<p>The app has no other users. It is not offered, sold or licensed to anyone, it has no public sign-up, and it never connects to anyone else's account.</p>
+<p>Contact: <a href="mailto:amine.slimane@supagent.io">amine.slimane@supagent.io</a></p>
+
+<h2>2. YouTube API Services</h2>
+<div class="box">
+<p><strong>The app uses YouTube API Services.</strong> By using the app, you agree to be bound by the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. Google's handling of data is described in the <a href="http://www.google.com/policies/privacy">Google Privacy Policy</a>.</p>
+</div>
+
+<h3>What YouTube data the app accesses</h3>
+<p>The app asks Google for three permissions (OAuth scopes): <code>youtube.upload</code>, <code>youtube.readonly</code> and <code>yt-analytics.readonly</code>. With them it accesses only the owner's own channels:</p>
+<ul>
+<li><strong>Uploading his own videos</strong> (YouTube Data API v3, <code>videos.insert</code> and <code>thumbnails.set</code>): the video file he chose, its title, description, privacy setting (private, unlisted or public, or a scheduled time), the "made for kids" setting, the AI-content label (<code>containsSyntheticMedia</code>) and, for long videos, a thumbnail.</li>
+<li><strong>His own channel</strong> (<code>channels.list</code>): the channel's id, title, subscriber count, total views, video count and the id of its uploads list, to check that the right channel was approved and to read its totals.</li>
+<li><strong>His own videos list</strong> (<code>playlistItems.list</code> and <code>videos.list</code>): the ids, titles, descriptions, publish dates, durations, privacy status and public counts (views, likes, comments) of the videos on his own channel.</li>
+<li><strong>Statistics and analytics of his own channel and videos</strong> (YouTube Analytics API, <code>reports.query</code>): views, estimated watch time, average view duration and percentage, subscribers gained, likes, comments, shares, views per day, traffic source types, the audience retention curve and, when offered, thumbnail impressions and click rate. These are totals for his own content; they identify no viewer.</li>
+</ul>
+<p>The app does not read other people's channels or videos, comments' text, subscriber lists, viewers' identities, private messages, or any Google account data such as contacts, email or files.</p>
+
+<h3>How the YouTube data is used</h3>
+<ul>
+<li>To publish the owner's own videos to his own channel, when he clicks Publish and confirms.</li>
+<li>To show him, in a console page on his own computer, which videos were posted where and with which link.</li>
+<li>To show him how his own videos perform (one statistics snapshot a day), so he can decide what to make next.</li>
+</ul>
+<p>It is not used for advertising, profiling, or any purpose other than these.</p>
+
+<h2>3. Instagram (Meta) and TikTok</h2>
+<p>The app also publishes the owner's videos to his own Instagram professional account and his own TikTok account, through their official APIs only.</p>
+<ul>
+<li><strong>Instagram</strong> (Instagram API with Instagram Login, scopes <code>instagram_business_basic</code>, <code>instagram_business_content_publish</code>, <code>instagram_business_manage_insights</code>): his account's id, username, follower and post counts; his own posts list; publishing his own Reels with the AI-generated label; and each Reel's insights (views, reach, likes, comments, saves, shares, watch time). To publish, Instagram needs to fetch the video from a link: the file is placed for at most 30 minutes in a temporary private storage bucket in the owner's own Google Cloud project, reached through a signed link, and deleted after the post.</li>
+<li><strong>TikTok</strong> (TikTok Login Kit and Content Posting API, scopes <code>user.info.basic</code>, <code>user.info.stats</code>, <code>video.list</code>, <code>video.upload</code>, <code>video.publish</code>): his account's id, username, display name and counts (followers, likes, videos); sending his own videos to TikTok (as a draft, or as a post with the AI-generated label); and his own videos list with their counts (views, likes, comments, shares).</li>
+</ul>
+<p>This data is used in the same way and kept in the same place as the YouTube data, described below. Meta's and TikTok's own handling of data is in the <a href="https://www.facebook.com/privacy/policy">Meta Privacy Policy</a> and the <a href="https://www.tiktok.com/legal/page/eea/privacy-policy/en">TikTok Privacy Policy</a>.</p>
+
+<h2>4. Where the data is stored</h2>
+<p>Everything stays on the owner's own computer:</p>
+<ul>
+<li><strong>Access and refresh tokens</strong> are kept only in the macOS Keychain, which the operating system encrypts. They are never written to a file, a code repository or a log, and never printed.</li>
+<li><strong>The app's own OAuth client secret</strong> is kept in Google Secret Manager in the owner's own Google Cloud project, and loaded into memory only while the app runs.</li>
+<li><strong>Statistics and the record of posts</strong> (post id, link, title, caption, dates, and the numbers listed above) are kept in a local SQLite database file on the same computer, and in a summary file read by the local console page.</li>
+</ul>
+<p>No data is sent to any server of the app, because there is none: the app talks only to the platforms' own APIs.</p>
+
+<h2>5. Sharing</h2>
+<p>The data is <strong>never shared, sold, rented or transferred</strong> to anyone. It is not used by anyone other than the owner. The only data that leaves the computer is what the owner chooses to publish, sent to the platform he publishes it on.</p>
+
+<h2>6. How long data is kept, and deleting it</h2>
+<p>Statistics are kept while the owner uses the app to follow his channels, and refreshed once a day. When access is revoked (below), or on request to the contact address, the stored tokens and the stored data from that platform are deleted from the computer within 7 days.</p>
+
+<h2>7. How to revoke access</h2>
+<ul>
+<li><strong>Google and YouTube:</strong> remove "Supagent Social Publisher" at <a href="https://security.google.com/settings/security/permissions">https://security.google.com/settings/security/permissions</a>.</li>
+<li><strong>Instagram (Meta):</strong> in the Instagram app or website, Settings, then Website permissions, then Apps and websites, and remove the app.</li>
+<li><strong>TikTok:</strong> in the TikTok app, Settings and privacy, then Security and permissions, then Apps and services, and remove the app.</li>
+</ul>
+<p>The app can also delete a stored token itself (its <code>logout</code> command).</p>
+
+<h2>8. Children</h2>
+<p>The app is not directed at children and collects no data from anyone other than the owner's own accounts.</p>
+
+<h2>9. Changes</h2>
+<p>If this policy changes, the new version is posted on this page with a new date.</p>
+
+<h2>10. Contact</h2>
+<p>Mohamed Amine SLIMANE, <a href="mailto:amine.slimane@supagent.io">amine.slimane@supagent.io</a></p>
+</body>
+</html>
